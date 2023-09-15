@@ -67,7 +67,7 @@ function Navbar() {
     <nav className="navbar navbar-expand-lg bg-body-tertiary shadow">
       <div className="container">
         <Link className="navbar-brand" to="/">
-          <span>&larr;</span>Wen Fase<span>&rarr;</span>
+          <span>&larr;</span>Wen DAW<span>&rarr;</span>
         </Link>
         <button
           className="navbar-toggler"

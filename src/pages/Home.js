@@ -5,7 +5,7 @@ function Home() {
   return (
     <div className="container mt-3">
       <h1>Página Inicial</h1>
-      <h4>Lista de Exercícios</h4>
+      <h4>Seja Bem Vindo a Lista de Exercícios <p style={{ color: "#27ae60", fontWeight:'bold', display:'inline' }}>Resolvidos!</p> com React.</h4>
 
       <ol>
         <li>

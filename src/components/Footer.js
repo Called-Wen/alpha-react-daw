@@ -4,7 +4,7 @@ import SearchForm from "./SearchForm";
 
 function Footer() {
   return (
-    <footer className="footer d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top mt-auto py-3 bg-body-tertiary shadow">
+    <footer className="footer d-flex flex-wrap justify-content-between align-items-center py-3 px-5 my-4  border-top mt-auto py-3 bg-body-tertiary shadow">
       <div className="col-md-4 d-flex align-items-center">
         <Link
           href="/"
