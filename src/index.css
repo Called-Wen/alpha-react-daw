@@ -90,3 +90,11 @@ code {
   display: block !important;
 }
 
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f0f0f0; /* Cor de fundo do footer */
+  padding: 10px; /* Espaçamento interno do footer */
+}

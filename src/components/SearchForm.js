@@ -7,7 +7,7 @@ function SearchForm(){
             <input className="form-control me-2" type="search" placeholder="Pesquisa" aria-label="Search"/>
 
             <button className="btn btn-outline-success" type="submit">
-                Search
+                Pesquisa
             </button>
         </form>
     )

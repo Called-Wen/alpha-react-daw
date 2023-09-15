@@ -1,40 +1,47 @@
-import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Home() {
-  const [contador, setContador] = useState(0);
 
-  const increment = () => {
-    setContador(contador + 1);
-  };
-
-  const decrement = () => {
-    setContador(contador - 1);
-  };
-
-  const estiloDoH2 = {
-    color: '#32527b',       
-    fontSize: '24px',    
-    display: 'inline-block'   
-  };
-
-  //Condição de renderização
-  
-  if (contador >= 30) {
-    estiloDoH2.color = 'red'; 
-  }
   return (
     <div className="container mt-3">
-      <h1>Home Page</h1>
+      <h1>Página Inicial</h1>
+      <h4>Lista de Exercícios</h4>
 
-      <div>
-        <button className="btn btn-outline-success" onClick={increment}>
-          <span>&#x2191;</span>
-        </button>
-        <h2  style={estiloDoH2}>Contador: {contador}</h2>
-        <button className="btn btn-outline-danger " onClick={decrement}>
-          <span>&#x2193;</span>
-        </button>
-      </div>
+      <ol>
+        <li>
+          {" "}
+          <Link to="/Ex1"> Exercício 1</Link>
+        </li>
+        <li>
+          {" "}
+          <Link to="/Ex2"> Exercício 2</Link>
+        </li>
+        <li>
+          {" "}
+          <Link to="/Ex3"> Exercício 3</Link>
+        </li>
+        <li>
+          {" "}
+          <Link to="/Ex4"> Exercício 4</Link>
+        </li>
+        <li>
+          {" "}
+          <Link to="/Ex5"> Exercício 5</Link>
+        </li>
+        <li>
+          {" "}
+          <Link to="/Ex6"> Exercício 6</Link>
+        </li>
+        <li>
+          {" "}
+          <Link to="/Ex7"> Exercício 7</Link>
+        </li>
+        <li>
+          {" "}
+          <Link to="/Ex8"> Exercício 8</Link>
+        </li>
+      </ol>
+
     </div>
   );
 }

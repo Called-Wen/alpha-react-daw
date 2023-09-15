@@ -3,7 +3,7 @@ function Contacts(){
     return (
         <div className="container mt-3">
             <h1>
-                Contacts Page
+                Página de Contactos
             </h1>
         </div>
     )

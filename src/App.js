@@ -1,7 +1,6 @@
-import MyRouter from "./router/Index.js"
-import Navbar from './components/Navbar';
+import MyRouter from "./router/Index.js";
+import Navbar from "./components/Navbar";
 import Footer from "./components/Footer.js";
-
 
 function App() {
   return (
