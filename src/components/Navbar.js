@@ -1,6 +1,68 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
+function LoginButton({ onLogin }) {
+  const handleLogin = () => {
+    onLogin();
+  };
+
+  return (
+    <Link className="nav-link" onClick={handleLogin}>
+      Iniciar Sessão
+    </Link>
+  );
+}
+
+function LogoutButton({ onLogout }) {
+  const handleLogout = () => {
+    onLogout();
+  };
+
+  return (
+    <Link className="nav-link" onClick={handleLogout}>
+      Terminar Sessão
+    </Link>
+  );
+}
+
 function Navbar() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const userList = [
+    { nome: "admin", password: "admin" },
+    { nome: "wen", password: "1234" },
+  ];
+
+  const inputName = "w1n";
+  const inputPassword = "1234";
+
+  const handleLogin = () => {
+    console.log("Handle Login called");
+    console.log("Input Name:", inputName);
+    console.log("Input Password:", inputPassword);
+
+    let validCredentials = false;
+    for (let i = 0; i < userList.length; i++) {
+      if (
+        userList[i].nome === inputName &&
+        userList[i].password === inputPassword
+      ) {
+        validCredentials = true;
+        break;
+      }
+    }
+
+    if (validCredentials) {
+      setIsLoggedIn(true);
+    } else {
+      console.log("Credenciais inválidas. Tente novamente.");
+      alert("Credenciais inválidas. Tente novamente.");
+    }
+  };
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+  };
+
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary shadow">
       <div className="container">
@@ -40,10 +102,12 @@ function Navbar() {
                 Contact Us
               </Link>
             </li>
-            <li class="nav-item">
-              <Link className="nav-link disabled" aria-disabled="true">
-                Condição
-              </Link>
+            <li className="nav-item">
+              {isLoggedIn ? (
+                <LogoutButton onLogout={handleLogout} />
+              ) : (
+                <LoginButton onLogin={handleLogin} />
+              )}
             </li>
           </ul>
         </div>

@@ -81,6 +81,21 @@ class Exercise3 extends Component {
     }
   };
 
+    // Este é chamado quando o componente é montado pela primeira vez
+    componentDidMount() {
+      console.log("Componente montado");
+    }
+  
+    // Este é chamado sempre que o componente é atualizado
+    componentDidUpdate(prevProps, prevState) {
+      console.log("Componente atualizado");
+    }
+  
+    // Este é chamado antes de o componente ser desmontado
+    componentWillUnmount() {
+      console.log("Componente desmontado");
+    }
+
   render() {
     return (
       <div className="container mt-3">

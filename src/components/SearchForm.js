@@ -3,10 +3,10 @@
 
 function SearchForm(){
     return(
-        <form onClick="submit" className="d-flex" role="search" >
+        <form className="d-flex" role="search" >
             <input className="form-control me-2" type="search" placeholder="Pesquisa" aria-label="Search"/>
 
-            <button className="btn btn-outline-success" type="submit">
+            <button className="btn btn-outline-success" >
                 Pesquisa
             </button>
         </form>
