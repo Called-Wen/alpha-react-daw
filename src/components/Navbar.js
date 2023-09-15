@@ -33,7 +33,7 @@ function Navbar() {
     { nome: "wen", password: "1234" },
   ];
 
-  const inputName = "w1n";
+  const inputName = "wen";
   const inputPassword = "1234";
 
   const handleLogin = () => {
