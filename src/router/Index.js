@@ -14,14 +14,27 @@ import Exercise7 from '../pages/Exercise7.js';
 import Exercise6 from '../pages/Exercise6.js';
 import Exercise4 from '../pages/Exercise4.js';
 import ToDoList from '../pages/ToDoList.js';
+import Login from '../components/Login.js';
+import Profile from '../components/Profile.js';
+
+
+import { LoginContext } from '../context/LoginContext.js'
+
+import React, { useState } from 'react'; 
 
 
 
 function MyRouter(){ 
+    const [username, setUsername] = useState("");
+    const [showProfile, setShowProfile] = useState(false);
+
 
     return (
         <Routes>
-            <Route path="/" element={<Home />} />
+
+            <Route path="/" element={ 
+            <LoginContext.Provider value={{ username, setUsername, setShowProfile }}>{showProfile ? <Profile /> : <Login />}
+            </LoginContext.Provider>  }/>
             <Route path="/about-us" element={<About />} />
             <Route path="/contact-us" element={<Contact />} />
             <Route path="/services" element={<Services />} />
