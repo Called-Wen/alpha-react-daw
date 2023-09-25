@@ -34,7 +34,7 @@ function Home() {
         </li>
         <li>
           {" "}
-          <Link to="/Ex7"> Exercício 7</Link>
+          <Link to="/Ex7b"> Exercício 7</Link>
         </li>
         <li>
           {" "}
