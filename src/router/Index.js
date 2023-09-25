@@ -13,6 +13,7 @@ import Exercise5 from '../pages/Exercise5.js';
 import Exercise7 from '../pages/Exercise7.js';
 import Exercise6 from '../pages/Exercise6.js';
 import Exercise4 from '../pages/Exercise4.js';
+import ToDoList from '../pages/ToDoList.js';
 
 
 
@@ -32,6 +33,7 @@ function MyRouter(){
             <Route path="/Ex6" element={<Exercise6 />} />
             <Route path="/Ex7" element={<Exercise7 />} />
             <Route path="/Ex8" element={<Exercise8 />} />
+            <Route path="/Extra" element={<ToDoList />} />
 
 
         </Routes> 

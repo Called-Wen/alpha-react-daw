@@ -40,6 +40,13 @@ function Home() {
           {" "}
           <Link to="/Ex8"> Exercício 8</Link>
         </li>
+        <li>
+          {" "}
+          <Link to="/Extra"> Extra</Link>
+        </li>
+
+
+        
       </ol>
 
     </div>

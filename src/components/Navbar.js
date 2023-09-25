@@ -37,9 +37,6 @@ function Navbar() {
   const inputPassword = "1234";
 
   const handleLogin = () => {
-    console.log("Handle Login called");
-    console.log("Input Name:", inputName);
-    console.log("Input Password:", inputPassword);
 
     let validCredentials = false;
     for (let i = 0; i < userList.length; i++) {
