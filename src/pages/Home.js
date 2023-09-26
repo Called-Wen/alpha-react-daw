@@ -42,7 +42,7 @@ function Home() {
         </li>
         <li>
           {" "}
-          <Link to="/Extra"> Extra</Link>
+          <Link to="/Extra"> Teste nr 1</Link>
         </li>
 
 

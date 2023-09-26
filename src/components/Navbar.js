@@ -1,64 +1,14 @@
-import { useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
-function LoginButton({ onLogin }) {
-  const handleLogin = () => {
-    onLogin();
-  };
-
-  return (
-    <Link className="nav-link" onClick={handleLogin}>
-      Iniciar Sessão
-    </Link>
-  );
-}
-
-function LogoutButton({ onLogout }) {
-  const handleLogout = () => {
-    onLogout();
-  };
-
-  return (
-    <Link className="nav-link" onClick={handleLogout}>
-      Terminar Sessão
-    </Link>
-  );
-}
+import { LoginContext } from "../context/LoginContext.js";
 
 function Navbar() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const userList = [
-    { nome: "admin", password: "admin" },
-    { nome: "wen", password: "1234" },
-  ];
+  const { isLoggedIn, handleLogout } = useContext(LoginContext);
 
-  const inputName = "wen";
-  const inputPassword = "1234";
+  console.log('isLoggedIn Navbar:', isLoggedIn);
 
-  const handleLogin = () => {
 
-    let validCredentials = false;
-    for (let i = 0; i < userList.length; i++) {
-      if (
-        userList[i].nome === inputName &&
-        userList[i].password === inputPassword
-      ) {
-        validCredentials = true;
-        break;
-      }
-    }
-
-    if (validCredentials) {
-      setIsLoggedIn(true);
-    } else {
-      console.log("Credenciais inválidas. Tente novamente.");
-      alert("Credenciais inválidas. Tente novamente.");
-    }
-  };
-  const handleLogout = () => {
-    setIsLoggedIn(false);
-  };
 
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary shadow">
@@ -100,11 +50,18 @@ function Navbar() {
               </Link>
             </li>
             <li className="nav-item">
-              {isLoggedIn ? (
-                <LogoutButton onLogout={handleLogout} />
-              ) : (
-                <LoginButton onLogin={handleLogin} />
-              )}
+            {isLoggedIn ? (
+          <button
+            className="btn btn-link nav-link"
+            onClick={handleLogout}
+          >
+            Terminar Sessão
+          </button>
+        ) : (
+          <Link className="nav-link" to="/Extra">
+            Iniciar Sessão
+          </Link>
+        )}
             </li>
           </ul>
         </div>

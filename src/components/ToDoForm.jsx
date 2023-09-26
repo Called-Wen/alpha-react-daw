@@ -27,11 +27,23 @@ const ToDoForm = () => {
 
   return (
     <div className="todo-form">
-      <h2>Criar Tarefa:</h2>
+      <h2>Registrar Livro:</h2>
       <form onSubmit={handleSubmit}>
         <div className="margin">
           <input type="text" placeholder="Digite o Título" value={value} onChange={(e) => setValue(e.target.value)} />
         </div>
+
+        <div className="margin">
+        <span className="input-group-text">Quantidade:</span>
+  <input
+    type="number"
+    className="form-control"
+    min="1"
+    max="90"
+    placeholder="Digite um número de 1 a 90"
+    aria-label="Número"
+    aria-describedby="basic-addon2"
+  /></div>
 
         <div className="margin">
           <select value={category} onChange={(e) => setCategory(e.target.value)}>
@@ -41,7 +53,7 @@ const ToDoForm = () => {
             <option value="Escola">Escola</option>
           </select>
         </div>
-        <button type="submit">Criar Tarefa</button>
+        <button type="submit">Registrar Livro</button>
       </form>
     </div>
   );

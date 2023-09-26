@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { useAppContext } from '../AppContext'; 
 
-const ToDo = ({ todo }) => {
+const ToDo = ({ todo, isAdmin }) => {
   const { state, dispatch } = useAppContext(); 
 
   const completeTodo = (id) => {
@@ -16,11 +16,20 @@ const ToDo = ({ todo }) => {
     <div className="todo" style={{ textDecoration: todo.isCompleted ? "line-through" : "" }}>
       <div className="content">
         <p>{todo.text}</p>
+        {todo.quant ? (
+          <p className="category" style={{textDecoration: todo.isCompleted ? "line-through" : ""}}>({todo.quant}) Livros</p>
+        ) : (
+          <p className="category" style={{ color: 'red', textDecoration: todo.isCompleted ? "line-through" : "" }}>Livro não disponível no momento</p>
+        )}
         <p className="category">({todo.category})</p>
       </div>
       <div>
-        <button className='complete' onClick={() => completeTodo(todo.id)}>Completar</button>
-        <button className='remove' onClick={() => removeToDo(todo.id)}>X</button>
+        {isAdmin && (
+          <React.Fragment>
+            <button className='complete' onClick={() => completeTodo(todo.id)}>Disponível</button>
+            <button className='remove' onClick={() => removeToDo(todo.id)}>X</button>
+          </React.Fragment>
+        )}
       </div>
     </div>
   )

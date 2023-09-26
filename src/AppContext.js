@@ -6,12 +6,13 @@ const initialState = {
   todos: [
     {
       id: 1,
-      text: "Criar funcionalidade X no Sistema",
+      text: "Terra Sonambula",
       category: "Trabalho",
+      quant: 20,
       isCompleted: false,
     },
-    { id: 2, text: "Matar Aula", category: "Escola", isCompleted: false },
-    { id: 3, text: "Preparar o Almoço", category: "Casa", isCompleted: true },
+    { id: 2, text: "Matar Sonhos", category: "Escola", quant: 19, isCompleted: false },
+    { id: 3, text: "O Diagnostico", category: "Casa", quant: 0, isCompleted: true },
   ],
   search: "",
   filter: "All",

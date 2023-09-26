@@ -1,5 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-
 import Home from "../pages/Home.js";
 import About from "../pages/About.js";
 import Contact from "../pages/Contacts.js";
@@ -12,23 +11,17 @@ import Exercise5 from "../pages/Exercise5.js";
 import Exercise7 from "../pages/Exercise7.js";
 import Exercise6 from "../pages/Exercise6.js";
 import Exercise4 from "../pages/Exercise4.js";
+import { LoginContext, LoginProvider } from "../context/LoginContext.js";
+import React from "react";
+import ToDoList from "../pages/ToDoList.js";
 import Login from "../components/Login.js";
 import Profile from "../components/Profile.js";
-
-
-import { LoginContext } from "../context/LoginContext.js";
-
-import React, { useState } from "react";
-import { AppProvider } from "../AppContext";
-
-import ToDoList from "../pages/ToDoList.js";
+import { AppProvider } from "../AppContext.js";
 
 function MyRouter() {
-  const [username, setUsername] = useState("");
-  const [showProfile, setShowProfile] = useState(false);
-
   return (
     <AppProvider>
+    <LoginProvider>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about-us" element={<About />} />
@@ -45,16 +38,12 @@ function MyRouter() {
         <Route path="/Ex7b" element={<ToDoList />} />
         <Route
           path="/Extra"
-          element={
-            <LoginContext.Provider
-              value={{ username, setUsername, setShowProfile }}
-            >
-              {showProfile ? <Profile /> : <Login />}
-            </LoginContext.Provider>
-          }
+          element={<LoginContext.Consumer>{(value) => value.isLoggedIn ? <Profile /> : <Login />}</LoginContext.Consumer>}
         />
       </Routes>
+    </LoginProvider>
     </AppProvider>
+
   );
 }
 
